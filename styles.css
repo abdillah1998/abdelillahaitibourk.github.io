@@ -42,6 +42,7 @@ left:0;
 line-height: 60px;
 width: 100%;
 z-index: 10;
+
 }
 
 .nav-wrapper {
@@ -70,7 +71,7 @@ margin-top: -2px;
 text-align: right;
 transition: transform 0.5s ease-out;
 -webkit-transition: transform 0.5s ease-out;
-} @media(max-width: 640px) {
+} @media(max-width: 300px) {
   #navbar ul {
     display: none;
   }
@@ -91,14 +92,48 @@ height: 50px;
 letter-spacing: 1px;
 margin: 0 20px;
 padding: 0 4px;
-
+position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
 
 }
 
 .nav-list a:hover {
-  background: var(--main-blue);
+  color: rgb(28, 121, 184);
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+}
+#navbar li a:before, #navbar li a:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -1px;
+  background: rgb(255, 255, 255);
 }
 
+#navbar li a:before {
+  left: 0;
+  transition: 0.5s;
+}
+
+#navbar li a:after {
+  background: rgb(253, 253, 253);
+  right: 0;
+}
+
+#navbar li a:hover:before {
+  background: rgb(255, 255, 255);
+  width: 100%;
+  transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+}
+
+#navbar li a:hover:after {
+  background: transparent;
+  width: 100%;
+}
 ul {
   list-style: none;
 }
@@ -121,7 +156,7 @@ align-items: center;
 width: 100%;
 height: 100vh;
 background-color: #000;
-background-image: linear-gradient(62deg, #050a0f 0%, #181719 100%);
+background-image: linear-gradient(62deg, #000000 0%, #000000 100%);
 }
 .welcome-section > p {
 font-size: 3rem;
@@ -207,6 +242,9 @@ color: #ffffff;
   padding: 2rem 0.5rem;
 }
 
+
+
+
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
@@ -218,18 +256,20 @@ color: #ffffff;
   background: var(--main-gray);
   transition: background 0.3s ease-out;
 }
+
 .btn-show-all:hover {
   background: var(--main-red);
 }
+
 .btn-show-all:hover > i {
   transform: translateX(2px);
 }
+
 .btn-show-all > i {
   margin-left: 10px;
   transform: translateX(0);
   transition: transform 0.3s ease-out;
 }
-
 
 
 .contact-section {
@@ -267,6 +307,7 @@ color: #ffffff;
 .contact-details:hover {
   transform: translateY(8px);
 }
+
 
 
 footer {
